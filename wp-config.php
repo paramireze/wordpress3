@@ -37,6 +37,9 @@ define('DB_CHARSET', 'utf8mb4');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/** Need more memory to make the world a happy place again */
+define( 'WP_MEMORY_LIMIT', '256M' );
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
