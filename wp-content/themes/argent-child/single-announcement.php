@@ -20,10 +20,9 @@ get_header(); ?>
 				endif;
 			?>
 
-			<?php the_post_navigation(); ?>
+
 
 		<?php endwhile; // end of the loop. ?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
