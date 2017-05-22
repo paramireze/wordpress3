@@ -4,7 +4,7 @@ function custom_songs_list( $atts, $content = null ) {
 
         $atts = shortcode_atts(array(
                 'title' => 'Song',
-                'count' => 5,
+                'count' => 200,
                 'song_body' => '',
                 'pagination' => 'off'
                 ), $atts);
@@ -15,6 +15,11 @@ function custom_songs_list( $atts, $content = null ) {
 
         $args = array(
                 'post_type' => 'song',
+                'orderby' => 'title',
+                'order' => 'asc',
+                'limit' => 1,
+                'posts_per_page' => 10000,
+
         //        'post_status' => 'publish',
         //        'no_found_rows' => $pagination,
         //        'posts_per_page' => $atts['count'],
@@ -25,24 +30,24 @@ function custom_songs_list( $atts, $content = null ) {
 
         if ($song->have_posts())  :
 
-                $display_song = '<h3>Hash Songs</h3>';
-                $display_song .= '<ul>';
+
+                $display_song = '<table>';
 
                 while ($song->have_posts()) : $song->the_post();
                     global $post;
 
-                     $song_body = get_post_meta(get_the_ID(), 'song_body', true);
+                     $song_body = get_the_content();
                      $title = get_the_title();
                      $slug = get_permalink();
 
-                     $display_song .= '<li class="songs-listing">';
+                     $display_song .= '<tr><td class="songs-listing">';
                      $display_song .= sprintf('<a href="%s">%s</a>&nbsp&nbsp', esc_url($slug), esc_html__($title));
-                     $display_song .= '<span>' . esc_html($song_body) . '</span>';
-                     $display_song .= '</li>';
+                     $display_song .= '</td><td>' . wp_trim_words($song_body, $num_words = 10, $more = ' ... ') . '</td>';
+                     $display_song .= '</tr>';
 
                  endwhile;
 
-         $display_song .= '</ul>';
+         $display_song .= '</table>';
 
          wp_reset_postdata();
 
