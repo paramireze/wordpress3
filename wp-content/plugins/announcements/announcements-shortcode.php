@@ -25,7 +25,7 @@ function custom_announcements_list( $atts, $content = null ) {
 
         if ($announcement->have_posts())  :
 
-                $display_announcement = '<h3>Announcements</h3>';
+                $display_announcement = '<h3>News & Announcements</h3>';
                 $display_announcement .= '<ul>';
 
                 while ($announcement->have_posts()) : $announcement->the_post();
