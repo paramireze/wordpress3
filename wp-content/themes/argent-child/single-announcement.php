@@ -11,7 +11,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'page' ); ?>
+			<?php get_template_part( 'announcement', 'page' ); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
