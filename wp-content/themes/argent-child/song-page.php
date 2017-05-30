@@ -24,6 +24,8 @@
 		<?php the_content(); ?>
 	</div><!-- .page-content -->
 
+    <div style="text-align:center;"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.jpeg" style="height:250px;" alt="" width="" height="" /></div>
+
 	<footer class="entry-footer entry-meta">
 		<?php edit_post_link( __( 'Edit', 'argent' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
