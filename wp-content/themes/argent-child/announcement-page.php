@@ -8,7 +8,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="page-header">
-		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+        <table>
+            <tr>
+                <td><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/leftArrow.png" style="height:50px;" alt="" width="" height="" /></td>
+                <td><?php the_title( '<h1 class="page-title">', '</h1>' ); ?></td>
+                <td><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rightArrow.png" style="height:50px;" alt="" width="" height="" /></td>
+            </tr>
+        </table>
+
+
 	</header><!-- .page-header -->
 
 	<div class="page-content">
