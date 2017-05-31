@@ -4,6 +4,8 @@
  */
 ?>
 
+<div class="page-content">
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) : ?>
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>">
@@ -23,6 +25,6 @@
 
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
-
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
+</div>
